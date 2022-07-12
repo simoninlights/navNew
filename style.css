@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 8vh;
+    background-color: transparent;
+    color: #000;
+    padding: 0 3rem;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    column-gap: 3rem;
+    
+}
+
+
+.nav-links li {    
+    display: flex;
+    justify-content: center;
+}
+
+.nav-burger {
+    display: none;
+}
+
+.nav-burger div {
+    width: 30px;
+    height: 5px;
+    background-color: #000;
+    margin: 5px;
+    transition: all 0.3s;
+}
+
+.nav-logo {
+    cursor: pointer;
+    padding: 0 .6rem;
+}
+
+.nav-logo h4 {
+    font-size: 1.9rem;
+    font-weight: 900;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 1024) {
+    .nav-links {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav-links {
+        position: absolute;
+        z-index: 3;
+        right: 0px;
+        height: 100vh;
+        top: 8vh;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 5rem;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.7s ease-in-out;
+    }
+    .nav-links li {
+        color: #000;
+    }
+    .nav-burger {
+        display: block;
+        cursor: pointer;
+    }
+    
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkfade {
+     from {
+        opacity: 0;
+        transform: translateX(50px);
+     }
+     to {
+        opacity: 1;
+        transform: translateX(0px);
+     }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px,8px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px,-9px);
+}
+
+
+
+
+.subscribe-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.subscribe-section h2 {
+    margin: 1rem 0 1rem 0;
+}
+
+.subscribe-section p {
+    margin: 1rem;
+    text-align: center;
+}
+
+.btn {
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #2980b9;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.2rem;
+    margin: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg {
+    position: relative;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.bg-title {
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.bg-title {
+    text-align: center;
+}
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.modal-container-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal {
+    background-color: white;
+    min-width: 10%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 0.7rem;
+    position: relative;
+    border: 0.2rem solid #2980b9;
+    ;
+    border-radius: 0.5rem;
+}
+
+.icon-cancel {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    cursor: pointer;
+    color: #2980b9;
+}
+
+.modal h2 {
+    font-size: 1.3rem;
+    padding: 0 2rem;
+}
+
+
+.modal label {
+    font-size: 1rem;
+}
+
+.modal input {
+    border: none;
+    background-color: rgba(218, 213, 213, 0.493);
+    padding: 0.5rem 0.5rem;
+    border-radius: .3rem;
+}
+
+.modal input:focus {
+    outline: none;
+}
